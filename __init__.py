@@ -6,4 +6,4 @@ downloader_config = os.path.join(parent_parent, "update.ini")
 parser = configparser.ConfigParser()
 parser.read(downloader_config)
 
-updater = updater_object(parser["UPDATE_NAME"], parser["ASSET_PATTERN"], parser["UPDATEURL"])
+updater = updater_object(parser["DEFAULT"]["UPDATE_NAME"], parser["DEFAULT"]["ASSET_PATTERN"], parser["DEFAULT"]["UPDATEURL"])

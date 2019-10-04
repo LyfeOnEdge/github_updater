@@ -14,6 +14,7 @@ class updater_object:
         self.update_name = update_name
         self.update_url = update_url
         self.asset_pattern = asset_pattern
+        self.status = None
 
     def update(self):
         #Download update json from github
@@ -53,7 +54,9 @@ class updater_object:
         latest_version = update_data["tag_name"]
 
         if float(latest_version) > float(current_version):
-            return update_data["body"]
+            ver = update_data["body"]
+            self.status = ver
+            return ver
 
 def openJson(file):
     with open(file, encoding="utf-8") as f:
