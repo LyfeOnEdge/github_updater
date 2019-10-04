@@ -120,7 +120,7 @@ def get_members(zip):
             zipinfo.filename = name[offset:]
             yield zipinfo
 
-def download_object(self, remote_name, filename):
+def download_object(remote_name, filename):
     r = urllib.request.urlopen(remote_name)
     if r.getcode() == 200:
         return r.read()
